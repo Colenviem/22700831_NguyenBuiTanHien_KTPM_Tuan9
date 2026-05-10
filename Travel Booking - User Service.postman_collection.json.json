@@ -1,0 +1,128 @@
+{
+  "info": {
+    "_postman_id": "7ee1392c-bdcb-40a5-a81a-fccb7f25f3f5",
+    "name": "Travel Booking - User Service",
+    "description": "Bộ test API cho User Service (Node.js + MariaDB)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "47390814",
+    "_collection_link": "https://go.postman.co/collection/47390814-7ee1392c-bdcb-40a5-a81a-fccb7f25f3f5?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "0. Register New User",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"newuser\",\n    \"password\": \"password123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://192.168.137.72:8081/register",
+          "protocol": "http",
+          "host": [
+            "192",
+            "168",
+            "137",
+            "72"
+          ],
+          "port": "8081",
+          "path": [
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "1. Login Success",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"hien\",\n    \"password\": \"123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://192.168.137.72:8081/login",
+          "protocol": "http",
+          "host": [
+            "192",
+            "168",
+            "137",
+            "72"
+          ],
+          "port": "8081",
+          "path": [
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "2. Login Fail",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"wronguser\",\n    \"password\": \"wrongpass\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://192.168.137.72:8081/login",
+          "protocol": "http",
+          "host": [
+            "192",
+            "168",
+            "137",
+            "72"
+          ],
+          "port": "8081",
+          "path": [
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "3. Get User By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://192.168.137.72:8081/users/2",
+          "protocol": "http",
+          "host": [
+            "192",
+            "168",
+            "137",
+            "72"
+          ],
+          "port": "8081",
+          "path": [
+            "users",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

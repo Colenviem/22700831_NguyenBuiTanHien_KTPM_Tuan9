@@ -1,0 +1,20 @@
+version: '3.9'
+
+services:
+  mariadb:
+    image: mariadb:11
+    container_name: mariadb-server
+    restart: always
+    environment:
+      # Lưu ý: MYSQL_USER không nên đặt trùng là 'root' vì mặc định root đã được tạo
+      - MYSQL_ROOT_PASSWORD=root123
+      - MYSQL_DATABASE=travel_booking
+    ports:
+      - "3307:3306"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    # MariaDB mặc định đã bind 0.0.0.0, nhưng thêm vào để chắc chắn
+    command: --bind-address=0.0.0.0
+
+volumes:
+  mariadb_data:
